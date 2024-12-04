@@ -9,6 +9,7 @@ import net.fortuna.ical4j.model.component.VEvent
 import net.fortuna.ical4j.model.property.Method
 import net.fortuna.ical4j.model.property.ProdId
 import net.fortuna.ical4j.model.property.Version
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Service
 import java.io.File
@@ -18,7 +19,7 @@ import java.io.FileOutputStream
 class CalendarService {
 
     private val eventResource = ClassPathResource("static/hoseo-university-event.json")
-    private val calendarFile = File("hoseo-university-calendar.ics")
+    private var calendarFile = File(System.getProperty("java.io.tmpdir"), "hoseo-university-calendar.ics")
 
     fun getCalendarFile(): File {
         if (!calendarFile.exists()) {
