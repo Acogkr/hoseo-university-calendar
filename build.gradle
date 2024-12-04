@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1'
     implementation 'org.mnode.ical4j:ical4j:2.2.7'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
