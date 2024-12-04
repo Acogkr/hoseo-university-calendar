@@ -36,4 +36,10 @@ class CalendarController(
             .body(FileSystemResource(file))
     }
 
+    @GetMapping("/update")
+    fun updateCalendar(): RedirectView {
+        calendarService.updateCalendar()
+        return RedirectView("/hoseo-university-calendar.ics")
+    }
+
 }
