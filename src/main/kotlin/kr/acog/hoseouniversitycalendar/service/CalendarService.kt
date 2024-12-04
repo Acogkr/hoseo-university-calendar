@@ -7,10 +7,7 @@ import net.fortuna.ical4j.data.CalendarOutputter
 import net.fortuna.ical4j.model.Calendar
 import net.fortuna.ical4j.model.Date
 import net.fortuna.ical4j.model.component.VEvent
-import net.fortuna.ical4j.model.property.Method
-import net.fortuna.ical4j.model.property.ProdId
-import net.fortuna.ical4j.model.property.Version
-import net.fortuna.ical4j.model.property.XProperty
+import net.fortuna.ical4j.model.property.*
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Service
 import java.io.File
@@ -49,7 +46,7 @@ class CalendarService {
                     Date(LocalDate.parse(end).plusDays(1).toString().replace("-", "")),
                     description
                 ).apply {
-                    properties.add(XProperty("X-MICROSOFT-CDO-ALLDAYEVENT", "TRUE"))
+                    properties.add(Transp.TRANSPARENT)
                 }
             )
         }
