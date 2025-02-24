@@ -50,6 +50,13 @@ class CalendarService {
                 ).apply {
                     (getProperty(Property.DTSTART) as DateProperty).parameters.add(Value.DATE)
                     (getProperty(Property.DTEND) as DateProperty).parameters.add(Value.DATE)
+
+                    (getProperty(Property.DTSTART) as DateProperty).apply {
+                        parameters.add(Value.DATE)
+                    }
+                    (getProperty(Property.DTEND) as DateProperty).apply {
+                        parameters.add(Value.DATE)
+                    }
                 }
             )
         }
